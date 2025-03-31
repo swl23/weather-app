@@ -2,7 +2,12 @@ const mke = "Milwaukee, WI";
 const la = "Los Angeles, CA";
 const nyc = "New York City, NY";
 
-const apiPrefix = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/ services/timeline/";
+const apiPrefix = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
+
+function buttonSearch() {
+	const search = document.getElementById("location");
+	lookUpWeather(search.value);
+}
 
 function formatAddress(input) {
 	let newInput;
@@ -90,4 +95,10 @@ function lookUpWeather(city) {
 lookUpWeather(mke);
 lookUpWeather(la);
 lookUpWeather(nyc);
-lookUpWeather(53217)
+
+window.addEventListener("DOMContentLoaded", () => {
+	const btn = document.getElementById("search");
+	btn.addEventListener("click", () => {
+		buttonSearch();
+	})
+})

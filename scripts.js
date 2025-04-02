@@ -1,6 +1,6 @@
 const apiPrefix = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
 
-async function buttonSearch() {
+async function runApp() {
 	const search = document.getElementById("input");
 	const weather = await lookUpWeather(search.value);
 	displayWeather(weather);
@@ -119,6 +119,7 @@ async function lookUpWeather(city) {
 }
 
 function displayWeather(data) {
+	resetDisplay();
 	displayCity(data.location);
 	displayCurrent(data.currentWeather);
 	displayWeek(data.weekForecast)
@@ -269,6 +270,31 @@ function displayWeek(week) {
 window.addEventListener("DOMContentLoaded", () => {
 	const btn = document.getElementById("search");
 	btn.addEventListener("click", () => {
-		buttonSearch();
+		runApp();
+	});
+
+	const scaleBtns = document.querySelectorAll("input[name=temp");
+	scaleBtns.forEach(btn => {
+		btn.addEventListener("change", () => {
+			runApp();
+		})
 	})
 })
+
+function resetDisplay() {
+	const contentSection = document.querySelector(".content");
+	contentSection.textContent = "";
+
+	const place = document.createElement("div");
+	place.setAttribute("class", "place");
+
+	const current = document.createElement("div");
+	current.setAttribute("class", "current");
+
+	const week = document.createElement("div");
+	week.setAttribute("class", "week");
+
+	contentSection.appendChild(place);
+	contentSection.appendChild(current);
+	contentSection.appendChild(week);
+}

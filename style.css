@@ -1,19 +1,139 @@
+@font-face {
+	font-family: "Circular-Regular";
+	src: url("./fonts/Circular-Regular.otf") format("opentype");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	--place-name-font-family: "Circular-Regular";
+	--place-name-font-size: 2.5rem;
+}
+
 body {
 	display: flex;
-	height: 100vh;
+	height: clamp(600px, 100vh, 2000px);
 	justify-content: center;
 	align-items: center;
 }
 
-div {
-	border: 2px solid red;
+#banner {
+	width: 100vw;
+	background-color: red;
 	padding: 1rem;
 	display: flex;
-	flex-direction: column;
+	justify-content: center;
 	align-items: center;
+	position: fixed;
+	top: 0;
+	gap: 300px;
+}
+
+#banner > .container {
+	display: flex;
+	gap: 2rem;
+}
+
+#banner > .container > form {
+	display: flex;
 	gap: 1rem;
 }
 
-button {
-	width: 40%;
+button#search {
+	width: 50px
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	align-items: center;
+}
+
+.content > div {
+	border: 1px solid blue;
+}
+
+.place {
+	text-align: center; 
+	font-family: var(--place-name-font-family);
+	font-size: var(--place-name-font-size);
+}
+
+.current {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	gap: 1rem;
+	text-align: center;
+	width: 600px;
+}
+
+.current > .header {
+	font-size: 2.5rem;
+}
+
+.current > .temp,
+.current > .conditions {
+	font-size: 2rem;
+}
+
+.current > .feels-like,
+.slide > .header {
+	font-size: 1.5rem;
+}
+
+.current > .last-checked {
+	font-style: italic;
+}
+
+.current-conditions-grid,
+.temp-grid {
+	display: flex;
+	justify-content: space-evenly;
+	text-align: center;
+}
+
+.current-conditions-grid > div,
+.temp-grid > div {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	align-items: center;
+}
+
+.current-conditions-grid > div > p:not(.label) {
+	font-size: 1.25rem;
+}
+
+.slides-container {
+	list-style: none;
+	display: flex;
+	gap: 4rem;
+	overflow: scroll;
+	width: 700px;
+	scroll-behavior: smooth;
+/* 	scrollbar-width: none; */
+	align-items: center;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	padding-left: 30%;
+	padding-right: 30%;
+}
+
+.slide {
+	text-align: center;
+	height: 250px;
+	flex: 1 0 auto;
+	aspect-ratio: 1/1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	border: 1px solid green;
+}
+
+.temp-grid {
+	gap: 1rem;
 }

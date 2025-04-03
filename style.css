@@ -23,11 +23,6 @@
     src: url("./fonts/Circular-Medium.otf") format("opentype");
 }
 
-@font-face {
-    font-family: "Circular-Light";
-    src: url("./fonts/Circular-Light.otf") format("opentype");
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -55,9 +50,13 @@ label,
 .label,
 button,
 input,
-.last-checked,
 .description {
     font-family: var(--standard-font-family);
+    font-size: var(--standard-font-size);
+}
+
+.last-checked {
+    font-family: "Circular-NewsItalic";
     font-size: var(--standard-font-size);
 }
 
@@ -218,7 +217,6 @@ button#search:active {
 .week {
     position: relative;
     overflow: hidden;
-    /* margin: 1rem; */
 }
 
 li > .header {

@@ -1,34 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./style.css">
-	<script src="./scripts.js"></script>
-	<title>Weather App</title>
-</head>
-<body>
-	<div id="banner">
-		<div class="container">
-			<form>
-				<label for="input">Location:</label>
-				<input type="text" id="input" name="input">
-			</form>
-			<button id="search">Go</button>
-		</div>
-		<div class="container">
-			<form>
-				<input type="radio" id="fahrenheit" name="temp" value="Fahrenheit" checked>
-				<label for="fahrenheit">Fahrenheit</label>
-				<input type="radio" id="celsius" name="temp" value="Celsius">
-				<label for="celsius">Celsius</label>
-			</form>
-		</div>
-	</div>
-	<div class="content">
-		<div class="place"></div>
-		<div class="current"></div>
-		<div class="week"></div>
-	</div>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <script src="./scripts.js"></script>
+        <title>Weather App</title>
+    </head>
+    <body>
+        <div id="title">
+            <p>Weather App</p>
+        </div>
+        <div id="banner">
+            <div class="container">
+                <form>
+                    <label for="input">Location:</label>
+                    <input type="text" id="input" name="input" />
+                </form>
+                <button id="search">Go</button>
+            </div>
+            <div class="container">
+                <form>
+                    <input
+                        type="radio"
+                        id="fahrenheit"
+                        name="temp"
+                        value="Fahrenheit"
+                        checked
+                    />
+                    <label for="fahrenheit">Fahrenheit</label>
+                    <input
+                        type="radio"
+                        id="celsius"
+                        name="temp"
+                        value="Celsius"
+                    />
+                    <label for="celsius">Celsius</label>
+                </form>
+            </div>
+        </div>
+        <div class="empty-column-1"></div>
+        <div class="content">
+            <div class="place"></div>
+            <div class="current">
+				<p id="no-weather">Search a location to see the weather.</p>
+				<p id="loading">Loading...</div>
+			</div>
+            <div class="week"></div>
+        </div>
+        <div class="empty-column-2"></div>
+    </body>
 </html>
